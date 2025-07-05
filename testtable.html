@@ -1,112 +1,135 @@
-<h1>ตารางเรียน</h1>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 600;
+            font-style: italic;
+            background-image: url("https://static.vecteezy.com/system/resources/previews/024/381/284/non_2x/abstract-geometric-pattern-design-background-wallpaper-design-with-circle-and-semi-circle-shape-modern-and-trendy-illustration-perfect-for-decor-cover-print-vector.jpg");
+            background-size: cover; /* ทำให้รูปภาพคลุมพื้นที่ทั้งหมด */
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* ทำให้รูปภาพพื้นหลังอยู่กับที่เมื่อเลื่อนหน้าจอ */
+            color: #333; /* สีข้อความทั่วไป */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-<table>
-    <thead>
-        <tr>
-            <th>เวลา</th>
-            <th>จันทร์</th>
-            <th>อังคาร</th>
-            <th>พุธ</th>
-            <th>พฤหัสบดี</th>
-            <th>ศุกร์</th>
-            <th>เสาร์</th>
-            <th>อาทิตย์</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>08:00 - 09:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>09:00 - 10:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>10:00 - 11:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>11:00 - 12:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>12:00 - 13:00</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-            <td>พักกลางวัน</td>
-        </tr>
-        <tr>
-            <td>13:00 - 14:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>14:00 - 15:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>15:00 - 16:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        <tr>
-            <td>16:00 - 17:00</td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-            <td contenteditable="true"></td>
-        </tr>
-        </tbody>
-</table>
+        h1 {
+            color: darkblue;
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-<p style="margin-top: 30px; font-size: 0.9em; color: #777;">
-    **วิธีใช้งาน:** เพียงแค่คลิกที่ช่องในตาราง (ยกเว้นช่องเวลา) ที่คุณต้องการแก้ไข แล้วพิมพ์ข้อความใหม่ได้เลยค่ะ
-</p>
+        form {
+            background-color: rgba(255, 255, 255, 0.9); /* สีพื้นหลังฟอร์มโปร่งแสง */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        label {
+            display: block; /* ทำให้แต่ละ label ขึ้นบรรทัดใหม่ */
+            margin-bottom: 8px;
+            color: #333; /* ปรับสีข้อความ label ให้มองเห็นง่าย */
+            font-weight: 700;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: calc(100% - 20px); /* ลบ padding ออกจากความกว้าง */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* ทำให้ padding และ border ไม่เพิ่มขนาดของ input */
+            font-family: "Chakra Petch", sans-serif;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: darkblue;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 0, 255, 0.3);
+        }
+
+        button {
+            background-color: darkblue;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            font-family: "Chakra Petch", sans-serif;
+            font-weight: 700;
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <form id="studentForm">
+        <h1>ฟอร์มสำหรับนักเรียน ม.1-2</h1>
+
+        <label for="fullName">ชื่อ-นามสกุล-ชื่อเล่น:</label>
+        <input type="text" id="fullName" name="fullName" placeholder="ใส่ชื่อ-นามสกุล-ชื่อเล่น" required>
+
+        <label for="nickname">ชื่อเล่น:</label>
+        <input type="text" id="nickname" name="nickname" placeholder="ใส่ชื่อเล่นของคุณ" required>
+
+        <label for="age">อายุ:</label>
+        <input type="number" id="age" name="age" min="11" max="14" placeholder="ใส่อายุ" required>
+
+        <label for="classroom">ห้องเรียน:</label>
+        <select id="classroom" name="classroom" required>
+            <option value="" disabled selected>--เลือกห้องเรียน--</option>
+            <option value="ม.101">ม.101</option>
+            <option value="ม.102">ม.102</option>
+            <option value="ม.103">ม.103</option>
+            <option value="ม.104">ม.104</option>
+            <option value="ม.105">ม.105</option>
+            <option value="ม.106">ม.106</option>
+            <option value="ม.107">ม.107</option>
+            <option value="ม.108">ม.108</option>
+            <option value="ม.109">ม.109</option>
+            <option value="ม.110">ม.110</option>
+            <option value="ม.111">ม.111</option>
+            <option value="ม.112">ม.112</option>
+            <option value="ม.113">ม.113</option>
+        </select>
+
+        <hr> <h2 style="color: darkblue; text-align: center;">ข้อมูลเกี่ยวกับแฟน (ไม่บังคับ)</h2>
+        <label for="bfGfName">ชื่อ-นามสกุล-ชื่อเล่น แฟน:</label>
+        <input type="text" id="bfGfName" name="bfGfName" placeholder="ใส่ชื่อแฟน หรือ 'ไม่มี'">
+
+        <label for="bfGfAge">อายุแฟน:</label>
+        <input type="number" id="bfGfAge" name="bfGfAge" min="11" max="14" placeholder="ใส่อายุแฟน (หากมี)">
+
+        <label for="bfGfSchool">สถานศึกษาที่แฟนอยู่:</label>
+        <input type="text" id="bfGfSchool" name="bfGfSchool" placeholder="ชื่อโรงเรียนของแฟน (หากมี)">
+
+        <button type="submit">ส่งข้อมูล</button>
+    </form>
+</body>
+</html>
