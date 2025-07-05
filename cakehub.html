@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Hub - แหล่งรวมเค้กอร่อย</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        header {
+            background-color: #FF69B4; /* สีชมพูสดใส */
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #FFB6C1; /* สีชมพูอ่อน */
+            padding: 0.5em 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1em;
+        }
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .cake-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 1em;
+        }
+        .cake-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .cake-item h3 {
+            margin: 0.5em 0;
+            color: #FF69B4;
+        }
+        .cake-item p {
+            font-size: 0.9em;
+            color: #666;
+            padding: 0 1em;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cake Hub</h1>
+        <p>แหล่งรวมเค้กอร่อยหลากหลายสไตล์!</p>
+    </header>
+
+    <nav>
+        <a href="#">เค้กวันเกิด</a> |
+        <a href="#">เค้กช็อกโกแลต</a> |
+        <a href="#">เค้กผลไม้</a> |
+        <a href="#">เค้กแฟนซี</a> |
+        <a href="#">เค้กคัพเค้ก</a>
+    </nav>
+
+    <div class="container">
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Chocolate+Cake" alt="Chocolate Cake">
+            <h3>เค้กช็อกโกแลตฟัดจ์</h3>
+            <p>เค้กช็อกโกแลตเข้มข้น เนื้อนุ่ม ละมุนลิ้น เหมาะสำหรับคนรักช็อกโกแลต.</p>
+        </div>
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Strawberry+Shortcake" alt="Strawberry Shortcake">
+            <h3>สตรอว์เบอร์รี่ ชอร์ตเค้ก</h3>
+            <p>เค้กเนื้อเบา พร้อมครีมสดและสตรอว์เบอร์รี่ลูกโต.</p>
+        </div>
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Red+Velvet+Cake" alt="Red Velvet Cake">
+            <h3>เรดเวลเวทเค้ก</h3>
+            <p>เค้กสีแดงกำมะหยี่ เนื้อนุ่ม ชุ่มฉ่ำ ท็อปด้วยครีมชีสฟรอสติ้ง.</p>
+        </div>
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Carrot+Cake" alt="Carrot Cake">
+            <h3>แครอทเค้ก</h3>
+            <p>เค้กแครอทหอมกรุ่น เนื้อแน่น เต็มไปด้วยถั่วและลูกเกด.</p>
+        </div>
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Cheesecake" alt="Cheesecake">
+            <h3>ชีสเค้กหน้าไหม้</h3>
+            <p>ชีสเค้กสไตล์ญี่ปุ่น เนื้อเนียนนุ่ม หอมกลิ่นชีส.</p>
+        </div>
+        <div class="cake-item">
+            <img src="https://via.placeholder.com/250x200?text=Tiramisu" alt="Tiramisu">
+            <h3>ทีรามิสุ</h3>
+            <p>ขนมหวานสัญชาติอิตาเลียน ครีมมาสคาโปนเข้มข้น.</p>
+        </div>
+        </div>
+
+    <footer>
+        <p>&copy; 2025 Cake Hub. All rights reserved.</p>
+    </footer>
+</body>
+</html>
