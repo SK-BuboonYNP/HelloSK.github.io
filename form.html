@@ -46,4 +46,36 @@
                    <option value="ม.102">ม.112</option>
                    <option value="ม.102">ม.113</option>
                 </label>
-    </form>
+                   <script>
+
+const form = document.getElementById('studentform');
+
+const resposeEl = document.getElementById('response');
+
+form.onsubmit = e =>{
+
+e.preventDefault();
+
+fetch(''
+
+{
+
+method: 'POST',
+
+body: new URLSearchParams(new FormData(form))
+
+})
+
+.then(() => {
+
+responseEl.textContent ="ส่งข้อมูลสําเร็จ ขอบคุณ";
+
+form.reset();
+
+})
+
+.catch(() => responseEl.textContent="เกิดข้อผิดพลาด ลองใหม่");
+
+};
+
+</script>
