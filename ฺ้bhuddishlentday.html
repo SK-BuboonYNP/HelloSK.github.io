@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>วันเข้าพรรษา</title>
     <style>
-       body {
-           background-image: url"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk3F37DlBQQAatH6qgiTPiNcp2zRKukZKfAQ&s"; /* แทนที่ "URL ของรูปภาพ" ด้วยที่อยู่จริงของรูปภาพ */
-       }
-   </style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            /* เพิ่มโค้ดสำหรับพื้นหลังลายไทยตรงนี้ */
+            background-image: url('https://www.transparenttextures.com/patterns/oriental-tiles.png'); /* ตัวอย่างลายไทยแบบโปร่งแสง */
+            /* หรือหากคุณมีรูปภาพลายไทยของคุณเอง ให้เปลี่ยน URL ตรงนี้ */
+            /* background-image: url('URL_ของรูปภาพลายไทยของคุณ.jpg'); */
+            background-repeat: repeat; /* ทำให้ลายซ้ำเพื่อครอบคลุมทั้งหน้า */
+            background-attachment: fixed; /* (ทางเลือก) ทำให้ลายอยู่กับที่เมื่อเลื่อนหน้าจอ */
+            /* ถ้าลายเข้มไป อาจปรับ opacity ของ container ได้ */
         }
         .container {
             max-width: 800px;
@@ -23,6 +26,8 @@
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* สามารถเพิ่มความโปร่งแสงให้ container ถ้าต้องการให้ลายพื้นหลังดูเด่นขึ้น */
+            /* background-color: rgba(255, 255, 255, 0.9); */
         }
         h1 {
             color: #2c3e50;
@@ -61,7 +66,7 @@
         <p>ช่วงเวลาจำพรรษาเป็นโอกาสดีที่พุทธศาสนิกชนจะได้ร่วมทำบุญตักบาตร ฟังเทศน์ฟังธรรม ถวายผ้าอาบน้ำฝน และบำเพ็ญกุศลต่างๆ เพื่อความเป็นสิริมงคล</p>
         <p>ประเพณีที่สำคัญในวันเข้าพรรษาได้แก่ <strong>การถวายผ้าอาบน้ำฝน</strong> และ <strong>การหล่อเทียนพรรษา</strong> เพื่อถวายแด่พระสงฆ์สำหรับใช้ในการจำพรรษาตลอด 3 เดือน</p>
         <div class="important-note">
-            <p><strong>ข้อควรทราบ:</strong> อย่าลืมเปลี่ยน <code>src="https://via.placeholder.com/800x200?text=Vassa+Day+Image"</code> ในแท็ก <code>&lt;img&gt;</code> เป็น **URL ของรูปภาพวันเข้าพรรษาจริง** ที่คุณต้องการใช้ เพื่อให้รูปภาพแสดงผลได้อย่างถูกต้องครับ</p>
+            <p><strong>ข้อควรทราบ:</strong> อย่าลืมเปลี่ยน <code>src="https://via.placeholder.com/800x200?text=Vassa+Day+Image"</code> ในแท็ก <code>&lt;img&gt;</code> เป็น **URL ของรูปภาพวันเข้าพรรษาจริง** ที่คุณต้องการใช้ และหากต้องการเปลี่ยนลายพื้นหลัง ให้เปลี่ยน URL ในส่วนของ <code>background-image: url('...');</code> ใน CSS ครับ</p>
         </div>
     </div>
 </body>
