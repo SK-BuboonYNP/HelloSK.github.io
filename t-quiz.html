@@ -29,7 +29,7 @@
     .choices button{display: block;
 			   margin: 5px 0;
 			   padding: 10px;
-			   width: 100%
+			   width: 100%;
 			   background-color:skyblue;
 			   cursor: pointer;}
 			   
@@ -40,12 +40,25 @@
   </head>
   <body>
     <header>
-      <h1>แบบฝึกหัด</h1>
+      <h1 style="color:blue">แบบฝึกหัดวิชาวิทยาศาสตร์</h1>
     </header>
 
     <div class="content">
-      <p>testing The quick brown fox jumps over the lazy dog</p>
-      <p>ทดสอบ รับข่าวสารเลขมงคล สถิติเลขดัง ดวงรายวัน รายเดือน รายปี พร้อมแนะนำวิธีเสริมดวงลุ้นรับรางวัลจากกิจกรรมเสริมความเป็นมงคลให้กับตัวท่านเอง</p>
+      1. น้ำแข็งแห้ง มีสีอะไร
+	<div class="choices">
+	   <button onclick="checkAnswer(this,true)">ก. ขาว</button>
+	   <button onclick="checkAnswer(this,false)">ข. ดำ</button>
+	   <button onclick="checkAnswer(this,false)">ค. น้ำตาล</button>
+	   <button onclick="checkAnswer(this,false)">ง. แดง</button>
     </div>
+	<br><br>
+	
+	</div>
+	  <script>
+	  function checkAnswer(btn,correct)
+	    {btn.parentElement.querySelectorAll('button').forEach(b => b.disabled =true);
+		btn.classList.add(correct? 'correct' : 'incorrect');}
+	  </script>
+	
   </body>
 </html>
