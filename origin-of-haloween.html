@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Origins of Halloween</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font setup */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a1a; /* Very dark gray/black background */
+            color: #f7f7f7; /* Light text */
+            min-height: 100vh;
+        }
+
+        /* Modern dark orange accent theme */
+        .header-bg {
+            background-color: #333333;
+        }
+        .accent-text {
+            color: #ff6600; /* Dark Orange */
+        }
+        .card {
+            background-color: #242424;
+            border-left: 4px solid #ff6600;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Navigation Bar -->
+    <header class="header-bg shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-3xl font-black accent-text">
+                All Hallow's Eve
+            </h1>
+            <nav class="hidden sm:flex space-x-6">
+                <a href="#history" class="text-gray-300 hover:text-orange-400 transition duration-300">History</a>
+                <a href="#traditions" class="text-gray-300 hover:text-orange-400 transition duration-300">Traditions</a>
+                <a href="#contact" class="text-gray-300 hover:text-orange-400 transition duration-300">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative overflow-hidden pt-12 pb-20 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-6xl sm:text-7xl font-extrabold tracking-tight accent-text mb-4">
+                    Unmasking Halloween
+                </h2>
+                <p class="text-xl text-gray-400 mt-3">
+                    Discover the ancient roots and modern celebrations of the world's most mysterious holiday.
+                </p>
+            </div>
+            <div class="mt-10">
+                <!-- Placeholder for a thematic image/icon -->
+                <svg class="w-24 h-24 mx-auto text-orange-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m-3-3v6m5 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Sections -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- History Section -->
+        <section id="history" class="mb-16">
+            <h3 class="text-4xl font-bold mb-8 accent-text border-b border-orange-500 pb-2">
+                The Celtic Roots of Samhain
+            </h3>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="card p-6 rounded-lg shadow-xl">
+                    <h4 class="text-2xl font-semibold mb-3 text-white">An Ancient Harvest</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        Halloween's origins date back to the ancient Celtic festival of **Samhain** (pronounced *sow-in*). The Celts, who lived 2,000 years ago, mostly in the area that is now Ireland, the United Kingdom, and northern France, celebrated their new year on November 1. This day marked the end of summer and the harvest and the beginning of the dark, cold winter, a time of year that was often associated with death.
+                    </p>
+                </div>
+                <div class="card p-6 rounded-lg shadow-xl">
+                    <h4 class="text-2xl font-semibold mb-3 text-white">Bridging Worlds</h4>
+                    <p class="text-gray-300 leading-relaxed">
+                        The Celts believed that on the night before the new year, the boundary between the worlds of the living and the dead became blurred. They celebrated Samhain on the evening of October 31. They thought that the ghosts of the dead returned to earth. This supernatural event inspired them to light **bonfires**, wear costumes, and tell fortunes to ward off evil spirits.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Traditions Section -->
+        <section id="traditions" class="mb-16">
+            <h3 class="text-4xl font-bold mb-8 accent-text border-b border-orange-500 pb-2">
+                Modern Celebrations
+            </h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Trick-or-Treating -->
+                <div class="card p-6 rounded-lg shadow-xl">
+                    <h4 class="text-xl font-semibold mb-3 text-white">Trick-or-Treating</h4>
+                    <p class="text-gray-400">
+                        This tradition can be traced to medieval practices where the poor would beg for food, and in return, they would pray for the dead relatives of the household. It evolved into children going door-to-door asking for sweets.
+                    </p>
+                </div>
+                <!-- Card 2: Costumes -->
+                <div class="card p-6 rounded-lg shadow-xl">
+                    <h4 class="text-xl font-semibold mb-3 text-white">Costumes & Masks</h4>
+                    <p class="text-gray-400">
+                        Originally, people wore costumes to confuse or mimic the roaming spirits of Samhain. Today, costumes are largely secular and include everything from pop culture icons to classic monsters.
+                    </p>
+                </div>
+                <!-- Card 3: Jack-O'-Lanterns -->
+                <div class="card p-6 rounded-lg shadow-xl">
+                    <h4 class="text-xl font-semibold mb-3 text-white">Jack-O'-Lanterns</h4>
+                    <p class="text-gray-400">
+                        The carving of pumpkins originated from an Irish myth about a man named Stingy Jack. He tricked the Devil and was cursed to wander the Earth with only a carved turnip and a lump of coal for light.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="header-bg py-8 mt-12 border-t border-orange-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+            <p>&copy; 2024 Halloween Explainer. All rights reserved.</p>
+            <p class="mt-2 text-sm">Design inspired by the haunting dark and orange themes of the season.</p>
+        </div>
+    </footer>
+</body>
+</html>
