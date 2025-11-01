@@ -1,121 +1,248 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cake Hub - แหล่งรวมเค้กอร่อย</title>
+    <title>Cake Hub - Where the Best Baking Happens</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Custom font and theme colors */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f0f0f0;
-            color: #333;
+            font-family: 'Inter', sans-serif;
+            background-color: #000000; /* Deep black background */
+            color: #f3f3f3; /* Light text for contrast */
+            min-height: 100vh;
         }
-        header {
-            background-color: #FF69B4; /* สีชมพูสดใส */
-            color: white;
-            padding: 1em 0;
-            text-align: center;
+        
+        /* Define the primary purple accent color */
+        .cake-purple-bg {
+            background-color: #4a148c; /* Darker Purple for header/footer */
         }
-        nav {
-            background-color: #FFB6C1; /* สีชมพูอ่อน */
-            padding: 0.5em 0;
-            text-align: center;
+        .cake-purple-text {
+            color: #ce93d8; /* Brighter Purple for accents */
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 0 1em;
+        
+        /* Custom Card styles for video thumbnails */
+        .video-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
         }
-        .container {
-            width: 90%;
-            margin: 20px auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .cake-item {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-            padding-bottom: 1em;
-        }
-        .cake-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .cake-item h3 {
-            margin: 0.5em 0;
-            color: #FF69B4;
-        }
-        .cake-item p {
-            font-size: 0.9em;
-            color: #666;
-            padding: 0 1em;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(74, 20, 140, 0.5); /* Purple shadow effect */
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Cake Hub</h1>
-        <p>แหล่งรวมเค้กอร่อยหลากหลายสไตล์!</p>
-    </header>
+<body class="antialiased">
 
-    <nav>
-        <a href="#">เค้กวันเกิด</a> |
-        <a href="#">เค้กช็อกโกแลต</a> |
-        <a href="#">เค้กผลไม้</a> |
-        <a href="#">เค้กแฟนซี</a> |
-        <a href="#">เค้กคัพเค้ก</a>
+    <!-- Header / Navigation Bar (Dark Purple) -->
+    <header class="cake-purple-bg shadow-2xl sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-col md:flex-row justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="text-4xl font-black tracking-widest uppercase text-white hover:text-purple-200 transition duration-300 mb-3 md:mb-0">
+                <span class="cake-purple-text">CAKE</span>HUB
+            </a>
+
+            <!-- Search Bar -->
+            <div class="flex w-full md:w-1/3 space-x-2">
+                <input type="text" placeholder="Search for Fluffy Filling or Deep Layers..." 
+                       class="w-full p-2 rounded-lg border-2 border-purple-600 bg-gray-900 text-white placeholder-gray-500 focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition">
+                <button class="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-lg font-bold transition duration-200">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Navigation/Category Bar (Horizontal Scroll on Mobile) -->
+    <nav class="bg-gray-900 shadow-xl overflow-x-auto whitespace-nowrap py-2 border-b border-purple-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex space-x-6 text-sm sm:text-base">
+            <a href="#" class="cake-purple-text font-bold p-1 border-b-2 border-purple-400">HOT BAKING</a>
+            <a href="#" class="text-gray-400 hover:text-purple-300 p-1 transition duration-200">NEW GLOSS</a>
+            <a href="#" class="text-gray-400 hover:text-purple-300 p-1 transition duration-200">DEEP FILLING</a>
+            <a href="#" class="text-gray-400 hover:text-purple-300 p-1 transition duration-200">CREAMY & SOFT</a>
+            <a href="#" class="text-gray-400 hover:text-purple-300 p-1 transition duration-200">PREMIUM CREAM</a>
+            <a href="#" class="text-gray-400 hover:text-purple-300 p-1 transition duration-200">COOKIES & MUFFINS</a>
+        </div>
     </nav>
 
-    <div class="container">
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Chocolate+Cake" alt="Chocolate Cake">
-            <h3>เค้กช็อกโกแลตฟัดจ์</h3>
-            <p>เค้กช็อกโกแลตเข้มข้น เนื้อนุ่ม ละมุนลิ้น เหมาะสำหรับคนรักช็อกโกแลต.</p>
-        </div>
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Strawberry+Shortcake" alt="Strawberry Shortcake">
-            <h3>สตรอว์เบอร์รี่ ชอร์ตเค้ก</h3>
-            <p>เค้กเนื้อเบา พร้อมครีมสดและสตรอว์เบอร์รี่ลูกโต.</p>
-        </div>
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Red+Velvet+Cake" alt="Red Velvet Cake">
-            <h3>เรดเวลเวทเค้ก</h3>
-            <p>เค้กสีแดงกำมะหยี่ เนื้อนุ่ม ชุ่มฉ่ำ ท็อปด้วยครีมชีสฟรอสติ้ง.</p>
-        </div>
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Carrot+Cake" alt="Carrot Cake">
-            <h3>แครอทเค้ก</h3>
-            <p>เค้กแครอทหอมกรุ่น เนื้อแน่น เต็มไปด้วยถั่วและลูกเกด.</p>
-        </div>
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Cheesecake" alt="Cheesecake">
-            <h3>ชีสเค้กหน้าไหม้</h3>
-            <p>ชีสเค้กสไตล์ญี่ปุ่น เนื้อเนียนนุ่ม หอมกลิ่นชีส.</p>
-        </div>
-        <div class="cake-item">
-            <img src="https://via.placeholder.com/250x200?text=Tiramisu" alt="Tiramisu">
-            <h3>ทีรามิสุ</h3>
-            <p>ขนมหวานสัญชาติอิตาเลียน ครีมมาสคาโปนเข้มข้น.</p>
-        </div>
-        </div>
+    <!-- Main Content Area: Video Grid -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <h2 class="text-3xl font-extrabold mb-6 text-white border-b border-gray-800 pb-2">
+            Trending: <span class="cake-purple-text">Freshly Glazed</span>
+        </h2>
+        
+        <!-- Responsive Grid for Cake Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            
+            <!-- Reusable Cake Card 1 -->
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <!-- Placeholder Thumbnail (Using simple color and text) -->
+                    <div class="text-5xl font-black text-purple-400">🍰</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        4:20
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Amateur Baker Gets Her First Deep Filling (Chocolate)
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>1.2M Views</span>
+                        <span>CakeMaster69</span>
+                    </div>
+                </div>
+            </div>
 
-    <footer>
-        <p>&copy; 2025 Cake Hub. All rights reserved.</p>
+            <!-- Reusable Cake Card 2 -->
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🎂</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        12:05
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        The Creamy Center That Broke The Internet
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>980K Views</span>
+                        <span>SugarDaddy</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reusable Cake Card 3 -->
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🍩</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        8:15
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Milf (Muffins I'd Like to Frost) Volume 3
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>2.5M Views</span>
+                        <span>IcingQueen</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reusable Cake Card 4 -->
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🍪</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        1:55
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Hot Baking: The Ultimate Cookie Glaze Tutorial
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>450K Views</span>
+                        <span>TheBatter</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More Cards to fill the grid -->
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🍮</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        6:07
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Sticky Pudding After Midnight
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>1.1M Views</span>
+                        <span>DessertFan</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🥐</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        15:30
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Extra Flaky Croissants: A Slow Bake Story
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>320K Views</span>
+                        <span>FrenchPastry</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🍎</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        7:45
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Freshly Baked Apple Pie Filling Exposure
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>750K Views</span>
+                        <span>AuntieB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="video-card rounded-xl overflow-hidden cursor-pointer">
+                <div class="relative h-48 bg-gray-800 flex items-center justify-center">
+                    <div class="text-5xl font-black text-purple-400">🍯</div>
+                    <div class="absolute bottom-2 right-2 bg-black bg-opacity-75 text-white text-xs font-bold px-2 py-1 rounded">
+                        10:01
+                    </div>
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-white truncate hover:text-purple-400 transition">
+                        Sticky Situation: Honey Cake Gone Wrong
+                    </h3>
+                    <div class="flex justify-between items-center text-xs text-gray-400 mt-1">
+                        <span>200K Views</span>
+                        <span>RookieBake</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <!-- Footer (Dark Purple) -->
+    <footer class="cake-purple-bg py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-300">
+            <p class="text-sm">&copy; 2024 Cake Hub. Always bake responsibly.</p>
+            <div class="flex justify-center space-x-4 mt-2 text-xs">
+                <a href="#" class="hover:text-purple-300">About</a>
+                <a href="#" class="hover:text-purple-300">Contact Frosting</a>
+                <a href="#" class="hover:text-purple-300">Legal Dough</a>
+                <a href="#" class="hover:text-purple-300">Privacy Policy</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
