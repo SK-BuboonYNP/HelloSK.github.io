@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>จตุรมิตรสามัคคี ครั้งที่ 31 - เว็บไซต์อย่างเป็นทางการ</title>
+    <style>
+        /* --- เพิ่ม Smooth Scroll ที่นี่ --- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* --- ตั้งค่าพื้นฐาน (Reset & Base Styles) --- */
+        :root {
+            --sk-color: #F06292; /* ชมพู - สวนกุหลาบ */
+            --ds-color: #2E7D32; /* เขียว - เทพศิรินทร์ */
+            --ac-color: #D32F2F; /* แดง - อัสสัมชัญ */
+            --bcc-color: #673AB7; /* ม่วง - กรุงเทพคริสเตียน */
+            --dark-bg: #1a1a1a;
+            --light-text: #f5f5f5;
+            --gold: #FFD700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Prompt', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            transition: color 0.3s;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width .3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1920x600/1a1a1a/FFF?text=Jaturamitr+Stadium+Atmosphere');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            /* เพิ่ม id เพื่อให้ลิงก์กลับมาบนสุดได้ */
+            scroll-margin-top: 80px; 
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            background-color: var(--gold);
+            color: var(--dark-bg);
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #ffca28;
+        }
+
+        /* Helper class เพื่อแก้ปัญหาเมนูบังเนื้อหาเวลาเลื่อน */
+        section {
+            scroll-margin-top: 80px;
+        }
+
+        /* --- 4 Schools Section --- */
+        .schools-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+            color: var(--dark-bg);
+        }
+
+        .schools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .school-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            border-top: 5px solid transparent;
+        }
+
+        .school-card:hover { transform: translateY(-10px); }
+
+        .sk-card { border-color: var(--sk-color); }
+        .ds-card { border-color: var(--ds-color); }
+        .bcc-card { border-color: var(--bcc-color); }
+        .ac-card { border-color: var(--ac-color); }
+
+        .school-logo {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .school-info { padding: 1.5rem; }
+        .school-info h3 { margin-bottom: 0.5rem; }
+
+        /* --- Schedule Section --- */
+        .schedule-section {
+            padding: 4rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .match-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .match-table th, .match-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .match-table th {
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        .match-row:hover { background-color: #f0f0f0; }
+
+        .team-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: white;
+            font-size: 0.8rem;
+            min-width: 60px;
+        }
+
+        /* --- History & Details Section --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            padding: 4rem 0;
+        }
+
+        .detail-box h3 {
+            border-left: 5px solid var(--gold);
+            padding-left: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .card-stunt-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark-bg);
+            color: #aaa;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: white;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .details-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } 
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body id="top"> <header>
+        <div class="container">
+            <nav>
+                <div class="logo" onclick="window.scrollTo(0,0)">JATURAMITR 31</div>
+                <ul class="nav-links">
+                    <li><a href="#top">หน้าแรก</a></li>
+                    <li><a href="#about">เกี่ยวกับงาน</a></li>
+                    <li><a href="#schools">4 สถาบัน</a></li>
+                    <li><a href="#schedule">ตารางแข่งขัน</a></li>
+                    <li><a href="#highlights">ไฮไลท์</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>การแข่งขันฟุตบอลจตุรมิตรสามัคคี<br>ครั้งที่ 31</h1>
+            <p>"สานสายใย สามัคคี พี่น้อง 4 สถาบัน สู่อนาคตที่ยั่งยืน"</p>
+            <p style="font-size: 0.9rem; margin-top: -10px; opacity: 0.8;">ณ สนามศุภชลาศัย สนามกีฬาแห่งชาติ</p>
+            <br>
+            <a href="#schedule" class="btn">ดูตารางการแข่งขัน</a>
+        </div>
+    </section>
+
+    <section id="about" class="container" style="padding: 4rem 0;">
+        <h2 class="section-title">ตำนานแห่งมิตรภาพ</h2>
+        <div style="max-width: 800px; margin: 0 auto; text-align: justify;">
+            <p>
+                <strong>จตุรมิตรสามัคคี (Jaturamitr Samakkee)</strong> เป็นการแข่งขันฟุตบอลประเพณีระดับมัธยมศึกษาที่ยิ่งใหญ่ที่สุดในประเทศไทย
+                จัดขึ้นระหว่าง 4 โรงเรียนชายล้วนเก่าแก่ ได้แก่ โรงเรียนสวนกุหลาบวิทยาลัย, โรงเรียนเทพศิรินทร์, โรงเรียนอัสสัมชัญ และ โรงเรียนกรุงเทพคริสเตียนวิทยาลัย
+            </p>
+            <br>
+            <p>
+                สำหรับการแข่งขันครั้งที่ 31 นี้ กลับมาอย่างยิ่งใหญ่หลังจากต้องเลื่อนจัดการแข่งขันเนื่องจากสถานการณ์โควิด-19
+                โดยในปีนี้ <strong>โรงเรียนเทพศิรินทร์ รับหน้าที่เป็นเจ้าภาพ</strong> ภายใต้แนวคิดที่เน้นความสามัคคี การรู้แพ้ รู้ชนะ รู้อภัย
+                และความคิดสร้างสรรค์ผ่านการเชียร์และการแปรอักษรที่เป็นเอกลักษณ์ระดับโลก
+            </p>
+        </div>
+    </section>
+
+    <section id="schools" class="schools-section">
+        <div class="container">
+            <h2 class="section-title">4 สถาบันพี่น้อง</h2>
+            <div class="schools-grid">
+                <div class="school-card sk-card">
+                    <img src="https://placehold.co/300x150/F06292/FFF?text=OSK+Suankularb" alt="Suankularb Logo" class="school-logo">
+                    <div class="school-info">
+                        <h3 style="color: var(--sk-color)">สวนกุหลาบวิทยาลัย</h3>
+                        <p><strong>ฉายา:</strong> ชมพู-ฟ้า</p>
+                        <p>สุภาพบุรุษสวนกุหลาบ ผู้นำที่เข้มแข็งและอ่อนโยน</p>
+                    </div>
+                </div>
+
+                <div class="school-card ds-card">
+                    <img src="https://placehold.co/300x150/2E7D32/FFF?text=DSA+Debsirin" alt="Debsirin Logo" class="school-logo">
+                    <div class="school-info">
+                        <h3 style="color: var(--ds-color)">เทพศิรินทร์</h3>
+                        <p><strong>ฉายา:</strong> ลูกแม่รำเพย (เขียว-เหลือง)</p>
+                        <p>สุภาพบุรุษลูกแม่รำเพย เจ้าภาพครั้งที่ 31</p>
+                    </div>
+                </div>
+
+                <div class="school-card ac-card">
+                    <img src="https://placehold.co/300x150/D32F2F/FFF?text=AC+Assumption" alt="Assumption Logo" class="school-logo">
+                    <div class="school-info">
+                        <h3 style="color: var(--ac-color)">อัสสัมชัญ</h3>
+                        <p><strong>ฉายา:</strong> อินทรีแดง (แดง-ขาว)</p>
+                        <p>OMNIA PRO DEO (ทำทุกสิ่งเพื่อพระเจ้า)</p>
+                    </div>
+                </div>
+
+                <div class="school-card bcc-card">
+                    <img src="https://placehold.co/300x150/673AB7/FFF?text=BCC+Bangkok+Christian" alt="BCC Logo" class="school-logo">
+                    <div class="school-info">
+                        <h3 style="color: var(--bcc-color)">กรุงเทพคริสเตียน</h3>
+                        <p><strong>ฉายา:</strong> ชงโคม่วงทอง</p>
+                        <p>Spirits of BCC ความรักและความผูกพัน</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">ตารางการแข่งขันและผลบอล</h2>
+            
+            <h3 style="margin-bottom: 10px; border-left: 5px solid var(--gold); padding-left: 10px;">วันที่ 1: รอบแรก (เปิดสนาม)</h3>
+            <table class="match-table" style="margin-bottom: 2rem;">
+                <thead>
+                    <tr>
+                        <th width="15%">เวลา</th>
+                        <th width="35%">ทีมเหย้า</th>
+                        <th width="10%">ผล</th>
+                        <th width="35%">ทีมเยือน</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="match-row">
+                        <td>13:00</td>
+                        <td><span class="team-badge" style="background:var(--sk-color)">สวนกุหลาบ</span></td>
+                        <td><strong>2 - 1</strong></td>
+                        <td><span class="team-badge" style="background:var(--bcc-color)">กรุงเทพคริสเตียน</span></td>
+                    </tr>
+                    <tr class="match-row">
+                        <td>16:00</td>
+                        <td><span class="team-badge" style="background:var(--ds-color)">เทพศิรินทร์</span></td>
+                        <td><strong>3 - 4</strong></td>
+                        <td><span class="team-badge" style="background:var(--ac-color)">อัสสัมชัญ</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-bottom: 10px; border-left: 5px solid var(--gold); padding-left: 10px;">วันที่ 2: รอบแรก</h3>
+            <table class="match-table" style="margin-bottom: 2rem;">
+                <thead>
+                    <tr>
+                        <th width="15%">เวลา</th>
+                        <th width="35%">ทีมเหย้า</th>
+                        <th width="10%">ผล</th>
+                        <th width="35%">ทีมเยือน</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="match-row">
+                        <td>13:00</td>
+                        <td><span class="team-badge" style="background:var(--ac-color)">อัสสัมชัญ</span></td>
+                        <td><strong>0 - 2</strong></td>
+                        <td><span class="team-badge" style="background:var(--sk-color)">สวนกุหลาบ</span></td>
+                    </tr>
+                    <tr class="match-row">
+                        <td>16:00</td>
+                        <td><span class="team-badge" style="background:var(--bcc-color)">กรุงเทพคริสเตียน</span></td>
+                        <td><strong>0 - 0</strong></td>
+                        <td><span class="team-badge" style="background:var(--ds-color)">เทพศิรินทร์</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+             <h3 style="margin-bottom: 10px; border-left: 5px solid var(--gold); padding-left: 10px;">วันที่ 3: รอบชิงชนะเลิศ (จำลอง)</h3>
+             <table class="match-table">
+                 <thead>
+                     <tr>
+                         <th width="15%">รอบ</th>
+                         <th width="35%">ทีม 1</th>
+                         <th width="10%">เวลา</th>
+                         <th width="35%">ทีม 2</th>
+                     </tr>
+                 </thead>
+                 <tbody>
+                     <tr class="match-row">
+                         <td>ชิงที่ 3</td>
+                         <td><span class="team-badge" style="background:var(--ds-color)">เทพศิรินทร์</span></td>
+                         <td>13:00</td>
+                         <td><span class="team-badge" style="background:var(--ac-color)">อัสสัมชัญ</span></td>
+                     </tr>
+                     <tr class="match-row">
+                         <td><strong>ชิงชนะเลิศ</strong></td>
+                         <td><span class="team-badge" style="background:var(--sk-color)">สวนกุหลาบ</span></td>
+                         <td>16:00</td>
+                         <td><span class="team-badge" style="background:var(--bcc-color)">กรุงเทพคริสเตียน</span></td>
+                     </tr>
+                 </tbody>
+             </table>
+        </div>
+    </section>
+
+    <section id="highlights" class="container details-grid">
+        <div class="detail-box">
+            <h3>ไฮไลท์: การแปรอักษร</h3>
+            
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/National_Stadium_Bangkok_%2835559665256%29.jpg" alt="Card Stunt" class="card-stunt-img">
+            <p>
+                สิ่งที่ขาดไม่ได้ในงานจตุรมิตรคือ <strong>"การแปรอักษร" (Card Stunt)</strong> จากนักเรียนปัจจุบันทั้ง 4 สถาบัน 
+                ที่พร้อมใจกันแสดงพลังผ่านเพลตสี สร้างสรรค์เป็นภาพเคลื่อนไหว ข้อความให้กำลังใจ และภาพล้อเลียนการเมือง/สังคม
+            </p>
+        </div>
+
+        <div class="detail-box">
+            <h3>ข่าวประชาสัมพันธ์</h3>
+            <div style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <h4 style="color: var(--ds-color);">⚠️ ข้อปฏิบัติในการเข้าชม</h4>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">12 พฤศจิกายน 2566</p>
+                <p>ห้ามนำพลุไฟ ดอกไม้ไฟ หรืออาวุธทุกชนิดเข้าสนาม</p>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
+                
+                <h4 style="color: var(--bcc-color);">📣 เปิดจำหน่ายของที่ระลึก</h4>
+                <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">10 พฤศจิกายน 2566</p>
+                <p>เสื้อเชียร์ หมวก และของที่ระลึกจตุรมิตร ครั้งที่ 31 มีจำหน่ายแล้วที่หน้าสนาม</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#top">หน้าหลัก</a> |
+                <a href="#about">ประวัติ</a> |
+                <a href="#">ติดต่อเรา</a>
+            </div>
+            <p>&copy; 2024 Jaturamitr Samakkee 31 Official Fan Site. All Rights Reserved Yannapat Wongsawat And Gemini3Pro.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
