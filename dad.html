@@ -1,0 +1,177 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>วันพ่อแห่งชาติ</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Google Sans', sans-serif;
+      
+      background-image: url('SKY-PASTEL.png'); 
+      background-size: cover; 
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      background-color: #f0f8ff; 
+      
+      min-height: 100vh;
+      margin: 0; 
+      padding: 0 15px; 
+      display: flex; /* เพื่อจัดเรียง header/main/footer ในแนวตั้ง */
+      flex-direction: column;
+    }
+
+    h1 {
+      text-align: center; 
+      font-weight: 700; 
+      font-size: 2.5em; 
+      color: white; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      padding-top: 50px; 
+      margin-bottom: 20px; 
+    }
+
+    main {
+        max-width: 800px; 
+        margin: 0 auto; 
+        padding-bottom: 50px; 
+        flex-grow: 1; /* ให้ main ขยายเต็มพื้นที่ที่เหลือ */
+    }
+
+    .info-card {
+        background-color: rgba(255, 255, 255, 0.7); 
+        backdrop-filter: blur(8px); 
+        -webkit-backdrop-filter: blur(8px); 
+        padding: 25px; 
+        border-radius: 12px; 
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+        line-height: 1.8; 
+        margin-top: 20px; 
+        border: 1px solid rgba(255, 255, 255, 0.3); 
+    }
+
+    .info-card h3 {
+        color: #004d40; 
+        border-bottom: 2px solid rgba(0, 77, 64, 0.2); 
+        padding-bottom: 5px;
+        margin-top: 25px;
+        font-weight: 600;
+    }
+
+    .info-card ul {
+        list-style-type: disc; 
+        padding-left: 25px;
+    }
+
+    .info-card li {
+        margin-bottom: 10px;
+    }
+    
+    .media-container {
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; 
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-image {
+        width: 40%; 
+        height: auto;
+        border-radius: 8px; 
+        border: 4px solid white; 
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); 
+    }
+    
+    .audio-group {
+        max-width: 55%; 
+        display: flex; 
+        flex-direction: column;
+        align-items: flex-end; 
+    }
+
+    .song-title {
+        font-size: 0.9em; 
+        margin: 0 0 5px 0; 
+        color: #333;
+    }
+
+    .audio-player {
+        max-width: 100%; 
+        width: auto;
+        height: 40px; 
+    }
+    
+    /* NEW: Footer Style */
+    footer {
+        text-align: center;
+        padding: 15px 0;
+        font-size: 0.85em; 
+        color: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง */
+        background-color: rgba(0, 0, 0, 0.3); /* พื้นหลังสีดำโปร่งแสง */
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+  </style>
+
+</head>
+<body>
+  <h1>วันพ่อแห่งชาติ</h1>
+
+  <main>
+    <section class="info-card">
+      
+      <div class="media-container">
+        <img src="VR009-DAD-DAY.jpg" alt="ภาพประกอบ วันพ่อแห่งชาติ" class="card-image">
+
+        <div class="audio-group">
+            <p class="song-title">เพลง ใครหนอ หนอใคร - ไมค์ ภิรมย์พร</p>
+            <audio controls class="audio-player">
+              <source src="ใครหนอ หนอใคร.mp3" type="audio/mpeg">
+              เบราว์เซอร์ของคุณไม่รองรับเครื่องเล่นเสียง
+            </audio>
+        </div>
+      </div>
+
+      <p>
+        วันพ่อแห่งชาติของไทย เริ่มจัดครั้งแรกปี พ.ศ. 2523 โดยคุณหญิงเนื้อทิพย์ เสมรสุต เพื่อเทิดทูนพระบาทสมเด็จพระเจ้าอยู่หัวรัชกาลที่ 9 ในฐานะ **"พ่อแห่งชาติ"** และยกย่องคุณพ่อทุกคน กำหนดให้ตรงกับวันที่ **5 ธันวาคม** ซึ่งเป็นวันคล้ายวันพระบรมราชสมภพของพระองค์ท่าน โดยมีวัตถุประสงค์เพื่อแสดงความกตัญญูต่อพ่อ และให้พ่อตระหนักถึงหน้าที่ตนเอง.
+      </p>
+
+      <h3>ที่มาและวัตถุประสงค์</h3>
+      <ul>
+        <li>**ผู้ริเริ่ม:** คุณหญิงเนื้อทิพย์ เสมรสุต นายกสมาคมผู้อาสาสมัครและช่วยการศึกษา.</li>
+        <li>**ปีแรก:** พ.ศ. 2523 (ค.ศ. 1980).</li>
+        <li>**เหตุผล:**
+          <ul>
+            <li>พ่อคือบุคคลผู้มีพระคุณต่อครอบครัวและสังคม ควรได้รับการเทิดทูน.</li>
+            <li>พระบาทสมเด็จพระบรมชนกาธิเบศร มหาภูมิพลอดุลยเดชมหาราช บรมนาถบพิตร ทรงเป็นพระราชบิดา และทรงมีพระมหากรุณาธิคุณต่อปวงชน จึงทรงเป็น **"พ่อแห่งชาติ"**.</li>
+          </ul>
+        </li>
+        <li>**วัตถุประสงค์:**
+          <ul>
+            <li>เทิดทูนพระเกียรติคุณและพระคุณของพ่อ.</li>
+            <li>ให้ลูกได้แสดงความกตัญญู.</li>
+            <li>ให้พ่อสำนึกในหน้าที่และความรับผิดชอบ.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>ความสำคัญของวันที่ 5 ธันวาคม</h3>
+      <ul>
+        <li>เป็นวันคล้ายวันพระบรมราชสมภพของพระบาทสมเด็จพระบรมชนกาธิเบศร มหาภูมิพลอดุลยเดชมหาราช บรมนาถบพิตร.</li>
+        <li>เป็นวันชาติไทย (ตั้งแต่ปี พ.ศ. 2503).</li>
+        <li>เป็นวันพ่อแห่งชาติ (ตั้งแต่ปี พ.ศ. 2523).</li>
+        <li>ปัจจุบันเป็นวันหยุดราชการด้วย.</li>
+      </ul>
+    </section>
+  </main>
+  
+  <footer>
+    เว็บไซต์โดย © 2025 Buboon YNP
+  </footer>
+</body>
+</html>
