@@ -20,7 +20,7 @@
       min-height: 100vh;
       margin: 0; 
       padding: 0 15px; 
-      display: flex; /* เพื่อจัดเรียง header/main/footer ในแนวตั้ง */
+      display: flex; 
       flex-direction: column;
     }
 
@@ -38,7 +38,7 @@
         max-width: 800px; 
         margin: 0 auto; 
         padding-bottom: 50px; 
-        flex-grow: 1; /* ให้ main ขยายเต็มพื้นที่ที่เหลือ */
+        flex-grow: 1; 
     }
 
     .info-card {
@@ -106,13 +106,38 @@
         height: 40px; 
     }
     
-    /* NEW: Footer Style */
+    .poem-container {
+        margin: 30px 0;
+        padding: 15px;
+        background-color: rgba(0, 0, 0, 0.05); 
+        border-radius: 8px;
+        border-left: 5px solid #004d40; 
+    }
+
+    .poem-stanza {
+        text-align: center;
+        line-height: 1.8; /* เพิ่มระยะห่างบรรทัด */
+        margin: 15px 0;
+        font-size: 1.2em; /* เพิ่มขนาดตัวอักษร */
+        font-style: italic;
+        font-weight: 500;
+        color: #333;
+    }
+    
+    /* NEW: Style for the first half of the verse to control its position (optional for fine-tuning) */
+    .verse-part {
+      display: inline-block;
+      min-width: 120px; /* ให้วรรคหน้ามีขนาดคงที่เล็กน้อยเพื่อช่วยในการจัดวาง */
+      text-align: right;
+      padding-right: 10px;
+    }
+    
     footer {
         text-align: center;
         padding: 15px 0;
         font-size: 0.85em; 
-        color: rgba(255, 255, 255, 0.9); /* สีขาวโปร่งแสง */
-        background-color: rgba(0, 0, 0, 0.3); /* พื้นหลังสีดำโปร่งแสง */
+        color: rgba(255, 255, 255, 0.9); 
+        background-color: rgba(0, 0, 0, 0.3); 
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
 
@@ -140,6 +165,21 @@
       <p>
         วันพ่อแห่งชาติของไทย เริ่มจัดครั้งแรกปี พ.ศ. 2523 โดยคุณหญิงเนื้อทิพย์ เสมรสุต เพื่อเทิดทูนพระบาทสมเด็จพระเจ้าอยู่หัวรัชกาลที่ 9 ในฐานะ **"พ่อแห่งชาติ"** และยกย่องคุณพ่อทุกคน กำหนดให้ตรงกับวันที่ **5 ธันวาคม** ซึ่งเป็นวันคล้ายวันพระบรมราชสมภพของพระองค์ท่าน โดยมีวัตถุประสงค์เพื่อแสดงความกตัญญูต่อพ่อ และให้พ่อตระหนักถึงหน้าที่ตนเอง.
       </p>
+
+      <div class="poem-container">
+        <p class="poem-stanza">
+          <span class="verse-part">พ่อหลวงภูมิพล</span> ปวงชนไทยรักมากยิ่ง
+        </p>
+        <p class="poem-stanza">
+          <span class="verse-part">เพราะพ่อคือทุกสิ่ง</span> เป็นมิ่งขวัญรวมแผ่นดิน
+        </p>
+        <p class="poem-stanza">
+          <span class="verse-part">แม้ท่านจะจากไป</span> ทำน้ำตาไทยไหลริน
+        </p>
+        <p class="poem-stanza">
+          <span class="verse-part">แต่ยังเป็นภูมินทร์</span> ตราบสิ้นนานแสนนานเอย
+        </p>
+      </div>
 
       <h3>ที่มาและวัตถุประสงค์</h3>
       <ul>
