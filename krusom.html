@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Citrus | ส้มระดับพรีเมียม</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-orange: #FF8C00;
+            --deep-orange: #E67E22;
+            --dark-gold: #C5A059;
+            --luxury-black: #1A1A1A;
+            --soft-white: #F9F9F9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background-color: var(--luxury-black);
+            color: var(--soft-white);
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary-orange);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--soft-white);
+            font-weight: 300;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 10%;
+            background: radial-gradient(circle at 80%, #333 0%, #1a1a1a 100%);
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text span {
+            color: var(--primary-orange);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin-bottom: 2rem;
+            color: #aaa;
+            line-height: 1.8;
+        }
+
+        .btn-luxury {
+            padding: 15px 40px;
+            background: transparent;
+            border: 1px solid var(--primary-orange);
+            color: var(--primary-orange);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.5s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-luxury:hover {
+            color: white;
+            background: var(--primary-orange);
+            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+        }
+
+        .hero-image {
+            position: relative;
+            width: 40%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* --- Features Section --- */
+        .features {
+            padding: 100px 10%;
+            display: grid;
+            grid-template-columns: repeat(3, 100fr);
+            gap: 30px;
+            background: white;
+            color: var(--luxury-black);
+        }
+
+        .feature-card {
+            padding: 40px;
+            border: 1px solid #eee;
+            transition: 0.4s;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary-orange);
+        }
+
+        .feature-card h3 {
+            margin: 20px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+        }
+
+        /* --- Section Divider --- */
+        .divider {
+            height: 2px;
+            width: 50px;
+            background: var(--primary-orange);
+            margin: 0 auto;
+        }
+
+        footer {
+            padding: 50px;
+            text-align: center;
+            background: var(--luxury-black);
+            border-top: 1px solid #333;
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 150px; }
+            .hero-text h1 { font-size: 3rem; }
+            .hero-image { width: 80%; margin-top: 50px; }
+            .features { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ORANGE.</div>
+        <ul class="nav-links">
+            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="#">สายพันธุ์</a></li>
+            <li><a href="#">ประโยชน์</a></li>
+            <li><a href="#">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
+            <h1>The Golden <br><span>Experience</span></h1>
+            <p>สัมผัสรสชาติความสดชื่นระดับพรีเมียมจากสวนส้มที่ได้รับการดูแลเป็นพิเศษ เพื่อมอบวิตามินและความหรูหราให้กับการใช้ชีวิตของคุณในทุกวัน</p>
+            <a href="#" class="btn-luxury">ค้นหารสชาติของคุณ</a>
+        </div>
+        <div class="hero-image" data-aos="zoom-in" data-aos-duration="1500">
+            <img src="https://pngimg.com/uploads/orange/orange_PNG780.png" alt="Orange Fruit">
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="divider"></div>
+            <h3>Organic 100%</h3>
+            <p>ปลูกด้วยกรรมวิธีธรรมชาติ ไร้สารเคมีตกค้าง เพื่อสุขภาพที่ดีที่สุดของคุณ</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="divider"></div>
+            <h3>Sweet & Zesty</h3>
+            <p>ความหวานที่ลงตัวตัดกับความเปรี้ยวสดชื่น เอกลักษณ์เฉพาะสายพันธุ์ทองดี</p>
+        </div>
+        <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="divider"></div>
+            <h3>Vitamin C+</h3>
+            <p>เสริมสร้างภูมิคุ้มกันด้วยปริมาณวิตามินซีที่สูงกว่าส้มทั่วไปในท้องตลาด</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 THE GOLDEN CITRUS LUXURY BRAND. ALL RIGHTS RESERVED.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true // ให้เล่น animation แค่ครั้งเดียวตอน scroll ลงมา
+        });
+    </script>
+</body>
+</html>
