@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Golden Citrus | ส้มระดับพรีเมียม</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Prompt:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* --- CSS Variables & Reset --- */
         :root {
-            --primary-orange: #FF8C00;
+            --primary-orange: #FF9F43; /* ปรับสีส้มให้ดูทองขึ้นเล็กน้อย */
             --deep-orange: #E67E22;
-            --dark-gold: #C5A059;
-            --luxury-black: #1A1A1A;
+            --luxury-black: #121212; /* ดำที่ลึกขึ้น */
+            --luxury-dark-grey: #1E1E1E;
             --soft-white: #F9F9F9;
+            --text-grey: #B0B0B0;
         }
 
         * {
@@ -29,24 +31,29 @@
             overflow-x: hidden;
         }
 
+        h1, h2, h3, .logo {
+            font-family: 'Playfair Display', serif;
+        }
+
         /* --- Navigation --- */
         nav {
-            padding: 2rem 5%;
+            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             z-index: 1000;
-            background: rgba(26, 26, 26, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             color: var(--primary-orange);
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            font-weight: 700;
         }
 
         .nav-links {
@@ -55,7 +62,7 @@
         }
 
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 40px;
         }
 
         .nav-links a {
@@ -64,183 +71,307 @@
             font-weight: 300;
             transition: 0.3s;
             text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            position: relative;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-orange);
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: var(--primary-orange);
+            bottom: -5px;
+            left: 0;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         /* --- Hero Section --- */
         .hero {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 10%;
-            background: radial-gradient(circle at 80%, #333 0%, #1a1a1a 100%);
+            padding: 100px 10% 0;
+            background: radial-gradient(circle at top right, #2a2a2a 0%, var(--luxury-black) 70%);
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            z-index: 2;
         }
 
         .hero-text h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            line-height: 1.1;
+            font-size: 4.5rem;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
         }
 
         .hero-text span {
             color: var(--primary-orange);
+            font-style: italic;
         }
 
         .hero-text p {
             font-size: 1.1rem;
-            max-width: 500px;
-            margin-bottom: 2rem;
-            color: #aaa;
+            max-width: 480px;
+            margin-bottom: 3rem;
+            color: var(--text-grey);
             line-height: 1.8;
+            font-weight: 300;
         }
 
         .btn-luxury {
-            padding: 15px 40px;
+            padding: 18px 45px;
             background: transparent;
             border: 1px solid var(--primary-orange);
             color: var(--primary-orange);
             text-decoration: none;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.5s;
-            position: relative;
-            overflow: hidden;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            display: inline-block;
         }
 
         .btn-luxury:hover {
-            color: white;
             background: var(--primary-orange);
-            box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+            color: var(--luxury-black);
+            box-shadow: 0 10px 30px rgba(255, 159, 67, 0.3);
         }
 
         .hero-image {
+            flex: 1;
             position: relative;
-            width: 40%;
+            display: flex;
+            justify-content: center;
         }
 
         .hero-image img {
-            width: 100%;
-            filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5));
-            animation: float 6s ease-in-out infinite;
+            width: 85%;
+            max-width: 600px;
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.6));
+            animation: float 8s ease-in-out infinite;
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-25px) rotate(2deg); }
         }
 
         /* --- Features Section --- */
         .features {
-            padding: 100px 10%;
+            padding: 120px 10%;
             display: grid;
-            grid-template-columns: repeat(3, 100fr);
-            gap: 30px;
-            background: white;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            background: var(--soft-white);
             color: var(--luxury-black);
+            position: relative;
         }
 
         .feature-card {
-            padding: 40px;
-            border: 1px solid #eee;
-            transition: 0.4s;
             text-align: center;
+            padding: 20px;
         }
 
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            border-color: var(--primary-orange);
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+            margin-bottom: 25px;
         }
 
         .feature-card h3 {
-            margin: 20px 0;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            letter-spacing: 1px;
         }
 
-        /* --- Section Divider --- */
-        .divider {
-            height: 2px;
-            width: 50px;
-            background: var(--primary-orange);
-            margin: 0 auto;
-        }
-
-        footer {
-            padding: 50px;
-            text-align: center;
-            background: var(--luxury-black);
-            border-top: 1px solid #333;
+        .feature-card p {
             color: #666;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* --- NEW SECTION: The Expert (ครูส้ม) --- */
+        .expert-section {
+            display: flex;
+            min-height: 90vh;
+            background-color: var(--luxury-dark-grey);
+            overflow: hidden;
+        }
+
+        .expert-image {
+            flex: 1;
+            background-image: url('https://images.unsplash.com/photo-1573164574472-797cdf4a583a?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* รูป Placeholder ผู้หญิงดูภูมิฐาน */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        /* เพิ่ม Overlay สีส้มทองบางๆ บนรูปเพื่อให้ดูหรูหรา */
+        .expert-image::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(45deg, rgba(18, 18, 18, 0.7), rgba(255, 159, 67, 0.2));
+        }
+
+        .expert-content {
+            flex: 1;
+            padding: 100px 8%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: var(--soft-white);
+        }
+
+        .expert-subtitle {
+            color: var(--primary-orange);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .expert-content h2 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            line-height: 1.3;
+        }
+        
+        .expert-quote {
+            border-left: 3px solid var(--primary-orange);
+            padding-left: 30px;
+            margin-bottom: 40px;
+        }
+
+        .expert-quote p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            font-style: italic;
+            color: #d0d0d0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .expert-signature {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-orange);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 10%;
+            background: var(--luxury-black);
+            text-align: center;
+            color: #555;
             font-size: 0.8rem;
+            letter-spacing: 1px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        footer .logo {
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         /* Responsive */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .features { grid-template-columns: 1fr; gap: 40px; padding: 80px 10%;}
+        }
+
         @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; padding-top: 150px; }
-            .hero-text h1 { font-size: 3rem; }
-            .hero-image { width: 80%; margin-top: 50px; }
-            .features { grid-template-columns: 1fr; }
             .nav-links { display: none; }
+            .hero { flex-direction: column; padding-top: 150px; text-align: center; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text p { margin: 0 auto 3rem; }
+            .hero-image { width: 100%; margin-top: 50px; }
+            
+            /* Responsive Expert Section */
+            .expert-section { flex-direction: column; }
+            .expert-image { height: 400px; flex: none; }
+            .expert-content { padding: 60px 20px; }
+            .expert-content h2 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">ORANGE.</div>
-        <ul class="nav-links">
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a href="#">สายพันธุ์</a></li>
-            <li><a href="#">ประโยชน์</a></li>
-            <li><a href="#">ติดต่อเรา</a></li>
+        <div class="logo" data-aos="fade-down">ORANGE.</div>
+        <ul class="nav-links" data-aos="fade-down" data-aos-delay="100">
+            <li><a href="#">The Collection</a></li>
+            <li><a href="#">The Curator</a></li>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <div class="hero-text" data-aos="fade-right" data-aos-duration="1000">
-            <h1>The Golden <br><span>Experience</span></h1>
-            <p>สัมผัสรสชาติความสดชื่นระดับพรีเมียมจากสวนส้มที่ได้รับการดูแลเป็นพิเศษ เพื่อมอบวิตามินและความหรูหราให้กับการใช้ชีวิตของคุณในทุกวัน</p>
-            <a href="#" class="btn-luxury">ค้นหารสชาติของคุณ</a>
+        <div class="hero-text" data-aos="fade-right" data-aos-duration="1200">
+            <h1>The Essence of <br><span>Golden Hour</span></h1>
+            <p>ดื่มด่ำกับรสชาติแห่งความประณีต ส้มที่ได้รับการดูแลราวกับงานศิลปะ เพื่อมอบประสบการณ์ความสดชื่นที่เหนือระดับที่สุดสำหรับคุณ</p>
+            <a href="#" class="btn-luxury">Discover More</a>
         </div>
-        <div class="hero-image" data-aos="zoom-in" data-aos-duration="1500">
-            <img src="https://pngimg.com/uploads/orange/orange_PNG780.png" alt="Orange Fruit">
+        <div class="hero-image" data-aos="zoom-out-left" data-aos-duration="1500">
+            <img src="https://pngimg.com/uploads/orange/orange_PNG780.png" alt="Premium Luxury Orange">
         </div>
     </section>
 
     <section class="features">
         <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-            <div class="divider"></div>
-            <h3>Organic 100%</h3>
-            <p>ปลูกด้วยกรรมวิธีธรรมชาติ ไร้สารเคมีตกค้าง เพื่อสุขภาพที่ดีที่สุดของคุณ</p>
+            <div class="feature-icon">✦</div>
+            <h3>Rare Cultivars</h3>
+            <p>คัดสรรเฉพาะสายพันธุ์หายาก ที่ให้รสชาติและกลิ่นหอมเป็นเอกลักษณ์ ไม่สามารถหาได้ทั่วไป</p>
         </div>
         <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-            <div class="divider"></div>
-            <h3>Sweet & Zesty</h3>
-            <p>ความหวานที่ลงตัวตัดกับความเปรี้ยวสดชื่น เอกลักษณ์เฉพาะสายพันธุ์ทองดี</p>
+            <div class="feature-icon">✦</div>
+            <h3>Hand-Selected</h3>
+            <p>เก็บเกี่ยวด้วยมืออย่างทะนุถนอมทีละผลในช่วงเวลาที่สมบูรณ์ที่สุด เพื่อคงคุณภาพสูงสุด</p>
         </div>
         <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-            <div class="divider"></div>
-            <h3>Vitamin C+</h3>
-            <p>เสริมสร้างภูมิคุ้มกันด้วยปริมาณวิตามินซีที่สูงกว่าส้มทั่วไปในท้องตลาด</p>
+            <div class="feature-icon">✦</div>
+            <h3>Artisan Process</h3>
+            <p>กระบวนการดูแลแบบออร์แกนิค ผสมผสานภูมิปัญญาดั้งเดิมเข้ากับเทคโนโลยีการเกษตรสมัยใหม่</p>
+        </div>
+    </section>
+
+    <section class="expert-section">
+        <div class="expert-image" data-aos="fade-right" data-aos-duration="1000">
+            </div>
+        <div class="expert-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <span class="expert-subtitle">The Curator</span>
+            <h2>พบกับ 'ครูส้ม' <br>(Kru Som)</h2>
+            <div class="expert-quote">
+                <p>"สำหรับดิฉัน ส้มไม่ใช่แค่ผลไม้ แต่คือสุนทรียภาพแห่งรสชาติ ความท้าทายคือการรักษาสมดุลระหว่างความหวานฉ่ำและความเปรี้ยวสดชื่นให้คงอยู่ในระดับที่สมบูรณ์แบบที่สุด... เพื่อให้ทุกคำคือรางวัลของคุณ"</p>
+            </div>
+            <p>— ผู้เชี่ยวชาญและนักพัฒนาสายพันธุ์ส้มระดับ Masterpiece</p>
+            <div style="margin-top: 40px;">
+                 <a href="#" class="btn-luxury">อ่านปรัชญาของเรา</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        &copy; 2024 THE GOLDEN CITRUS LUXURY BRAND. ALL RIGHTS RESERVED.
+        <div class="logo">ORANGE.</div>
+        <p>&copy; 2024 THE GOLDEN CITRUS ELEGANCE. ALL RIGHTS RESERVED.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            once: true // ให้เล่น animation แค่ครั้งเดียวตอน scroll ลงมา
+            once: true,
+            offset: 100,
+            easing: 'ease-in-out-quart'
         });
     </script>
 </body>
